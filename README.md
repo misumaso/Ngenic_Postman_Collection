@@ -3,6 +3,10 @@
 This repository contains a complete **Postman Collection** and **Environment** setup for interacting with the **Ngenic API (v3)**.  
 It is designed to simplify testing, development, and integration with Ngenic’s smart energy management services.
 
+## API Documentation
+ - Documentation site: https://developer.ngenic.se
+ - Generate keys: https://developer.ngenic.se/tokens
+
 ---
 
 ## 📦 Contents
@@ -76,7 +80,3 @@ Each request is pre-configured with required parameters, URL templates, and exam
 GET https://app.ngenic.se/api/v3/tunes
 Authorization: Bearer {{api_key}}
 ```
-
-### 6. API Documentation
- - Documentation site: https://developer.ngenic.se
- - Generate keys: https://developer.ngenic.se/tokens
