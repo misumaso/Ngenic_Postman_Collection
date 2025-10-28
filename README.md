@@ -1,6 +1,6 @@
 # 🔧 Ngenic Postman Collection
 
-This repository contains a complete **Postman Collection** and **Environment** setup for interacting with the **Ngenic API (v3)**.  
+This repository contains a complete **Postman Collection** and **Environment** setup for interacting with the **Ngenic API**.  
 It is designed to simplify testing, development, and integration with Ngenic’s smart energy management services.
 
 ## 📖 API Documentation
