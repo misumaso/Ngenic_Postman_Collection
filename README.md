@@ -78,6 +78,5 @@ Authorization: Bearer {{api_key}}
 ```
 
 ### 6. API Documentation
-Documentation site: https://developer.ngenic.se
-
-Generate keys: https://developer.ngenic.se/tokens
+ - Documentation site: https://developer.ngenic.se
+ - Generate keys: https://developer.ngenic.se/tokens
