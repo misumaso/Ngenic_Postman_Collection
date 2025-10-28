@@ -1,0 +1,1049 @@
+{
+	"info": {
+		"_postman_id": "f424e70d-5ba0-464a-abf1-3a230d2962b7",
+		"name": "Ngenic",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30556427"
+	},
+	"item": [
+		{
+			"name": "Tunes",
+			"item": [
+				{
+					"name": "List Tunes",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{api_key}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://app.ngenic.se/api/v3/tunes",
+							"protocol": "https",
+							"host": [
+								"app",
+								"ngenic",
+								"se"
+							],
+							"path": [
+								"api",
+								"v3",
+								"tunes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get a Tune",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{api_key}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://app.ngenic.se/api/v3/tunes{tuneUuid}",
+							"protocol": "https",
+							"host": [
+								"app",
+								"ngenic",
+								"se"
+							],
+							"path": [
+								"api",
+								"v3",
+								"tunes{tuneUuid}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "ControlSettings",
+			"item": [
+				{
+					"name": "Get control settings",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{api_key}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://app.ngenic.se/api/v3/tunes/{{tuneUuid}}/controlsettings",
+							"protocol": "https",
+							"host": [
+								"app",
+								"ngenic",
+								"se"
+							],
+							"path": [
+								"api",
+								"v3",
+								"tunes",
+								"{{tuneUuid}}",
+								"controlsettings"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Set control settings",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{api_key}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"controlOnSpotPrice\": true,\r\n  \"spotPriceFactorIndex\": 25\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://app.ngenic.se/api/v3/tunes/{{tuneUuid}}/controlsettings",
+							"protocol": "https",
+							"host": [
+								"app",
+								"ngenic",
+								"se"
+							],
+							"path": [
+								"api",
+								"v3",
+								"tunes",
+								"{{tuneUuid}}",
+								"controlsettings"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Node",
+			"item": [
+				{
+					"name": "List Nodes",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{api_key}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://app.ngenic.se/api/v3/tunes/{{tuneUuid}}/gateway/nodes",
+							"protocol": "https",
+							"host": [
+								"app",
+								"ngenic",
+								"se"
+							],
+							"path": [
+								"api",
+								"v3",
+								"tunes",
+								"{{tuneUuid}}",
+								"gateway",
+								"nodes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get a Node",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{api_key}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://app.ngenic.se/api/v3/tunes/{{tuneUuid}}/gateway/nodes/{nodeUuid}",
+							"protocol": "https",
+							"host": [
+								"app",
+								"ngenic",
+								"se"
+							],
+							"path": [
+								"api",
+								"v3",
+								"tunes",
+								"{{tuneUuid}}",
+								"gateway",
+								"nodes",
+								"{nodeUuid}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Measurements",
+			"item": [
+				{
+					"name": "Get a set of measurements for all Nodes with the specified measurement type",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{api_key}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://app.ngenic.se/api/v3/tunes/{{tuneUuid}}/measurements?from=2019-01-01T00:00:00 Europe/Stockholm&to=2019-01-01T00:00:00 Europe/Stockholm&type=string",
+							"protocol": "https",
+							"host": [
+								"app",
+								"ngenic",
+								"se"
+							],
+							"path": [
+								"api",
+								"v3",
+								"tunes",
+								"{{tuneUuid}}",
+								"measurements"
+							],
+							"query": [
+								{
+									"key": "from",
+									"value": "2019-01-01T00:00:00 Europe/Stockholm",
+									"description": "string"
+								},
+								{
+									"key": "to",
+									"value": "2019-01-01T00:00:00 Europe/Stockholm",
+									"description": "string"
+								},
+								{
+									"key": "period",
+									"value": "M",
+									"disabled": true
+								},
+								{
+									"key": "type",
+									"value": "string"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get measurements for a Node",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{api_key}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://app.ngenic.se/api/v3/tunes/{{tuneUuid}}/measurements/{nodeUuid}?from=2019-01-01T00:00:00 Europe/Stockholm&to=2019-01-01T00:00:00 Europe/Stockholm&type=string",
+							"protocol": "https",
+							"host": [
+								"app",
+								"ngenic",
+								"se"
+							],
+							"path": [
+								"api",
+								"v3",
+								"tunes",
+								"{{tuneUuid}}",
+								"measurements",
+								"{nodeUuid}"
+							],
+							"query": [
+								{
+									"key": "from",
+									"value": "2019-01-01T00:00:00 Europe/Stockholm",
+									"description": "string"
+								},
+								{
+									"key": "to",
+									"value": "2019-01-01T00:00:00 Europe/Stockholm",
+									"description": "string"
+								},
+								{
+									"key": "period",
+									"value": "M",
+									"disabled": true
+								},
+								{
+									"key": "type",
+									"value": "string"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get latest measurements for all Nodes with the specified measurement type",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{api_key}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://app.ngenic.se/api/v3/tunes/{{tuneUuid}}/measurements/latest?type=string",
+							"protocol": "https",
+							"host": [
+								"app",
+								"ngenic",
+								"se"
+							],
+							"path": [
+								"api",
+								"v3",
+								"tunes",
+								"{{tuneUuid}}",
+								"measurements",
+								"latest"
+							],
+							"query": [
+								{
+									"key": "type",
+									"value": "string"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get latest measurement for a Node",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{api_key}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://app.ngenic.se/api/v3/tunes/{{tuneUuid}}/measurements/{nodeUuid}/latest?type=string",
+							"protocol": "https",
+							"host": [
+								"app",
+								"ngenic",
+								"se"
+							],
+							"path": [
+								"api",
+								"v3",
+								"tunes",
+								"{{tuneUuid}}",
+								"measurements",
+								"{nodeUuid}",
+								"latest"
+							],
+							"query": [
+								{
+									"key": "type",
+									"value": "string"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List the types of measurement data available for a Node",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{api_key}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://app.ngenic.se/api/v3/tunes/{{tuneUuid}}/measurements/{nodeUuid}/types",
+							"protocol": "https",
+							"host": [
+								"app",
+								"ngenic",
+								"se"
+							],
+							"path": [
+								"api",
+								"v3",
+								"tunes",
+								"{{tuneUuid}}",
+								"measurements",
+								"{nodeUuid}",
+								"types"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Status",
+			"item": [
+				{
+					"name": "Get Node status",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{api_key}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://app.ngenic.se/api/v3/tunes/{{tuneUuid}}/nodestatus",
+							"protocol": "https",
+							"host": [
+								"app",
+								"ngenic",
+								"se"
+							],
+							"path": [
+								"api",
+								"v3",
+								"tunes",
+								"{{tuneUuid}}",
+								"nodestatus"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "TuneUsers",
+			"item": [
+				{
+					"name": "/tuneusers",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{api_key}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://app.ngenic.se/api/v3/tunes/{{tuneUuid}}/tuneusers",
+							"protocol": "https",
+							"host": [
+								"app",
+								"ngenic",
+								"se"
+							],
+							"path": [
+								"api",
+								"v3",
+								"tunes",
+								"{{tuneUuid}}",
+								"tuneusers"
+							],
+							"query": [
+								{
+									"key": "period",
+									"value": "M",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Room",
+			"item": [
+				{
+					"name": "List Rooms",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{api_key}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://app.ngenic.se/api/v3/tunes/{{tuneUuid}}/rooms",
+							"protocol": "https",
+							"host": [
+								"app",
+								"ngenic",
+								"se"
+							],
+							"path": [
+								"api",
+								"v3",
+								"tunes",
+								"{{tuneUuid}}",
+								"rooms"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Modify a set of Rooms",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{api_key}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n    {\r\n        \"uuid\": \"string\",\r\n        \"hasDefaultValues\": bolean,\r\n        \"name\": \"string\",\r\n        \"nodeUuid\": \"string\",\r\n        \"targetTemperature\": float,\r\n        \"activeControl\": bolean\r\n    },\r\n    {\r\n        \"uuid\": \"string\",\r\n        \"hasDefaultValues\": bolean,\r\n        \"name\": \"string\",\r\n        \"nodeUuid\": \"string\",\r\n        \"targetTemperature\": float,\r\n        \"activeControl\": bolean\r\n    }\r\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://app.ngenic.se/api/v3/tunes/{{tuneUuid}}/rooms",
+							"protocol": "https",
+							"host": [
+								"app",
+								"ngenic",
+								"se"
+							],
+							"path": [
+								"api",
+								"v3",
+								"tunes",
+								"{{tuneUuid}}",
+								"rooms"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get a room",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{api_key}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://app.ngenic.se/api/v3/tunes/{{tuneUuid}}/rooms/{roomUuid}",
+							"protocol": "https",
+							"host": [
+								"app",
+								"ngenic",
+								"se"
+							],
+							"path": [
+								"api",
+								"v3",
+								"tunes",
+								"{{tuneUuid}}",
+								"rooms",
+								"{roomUuid}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Modify room",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{api_key}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"uuid\": \"string\",\r\n    \"hasDefaultValues\": bolean,\r\n    \"name\": \"string\",\r\n    \"nodeUuid\": \"string\",\r\n    \"targetTemperature\": float,\r\n    \"activeControl\": bolean\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://app.ngenic.se/api/v3/tunes/{{tuneUuid}}/rooms/{roomUuid}",
+							"protocol": "https",
+							"host": [
+								"app",
+								"ngenic",
+								"se"
+							],
+							"path": [
+								"api",
+								"v3",
+								"tunes",
+								"{{tuneUuid}}",
+								"rooms",
+								"{roomUuid}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "SetpointSchedule",
+			"item": [
+				{
+					"name": "List Setpoint Schedules",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{api_key}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://app.ngenic.se/api/v3/tunes/{{tuneUuid}}/setpointschedules",
+							"protocol": "https",
+							"host": [
+								"app",
+								"ngenic",
+								"se"
+							],
+							"path": [
+								"api",
+								"v3",
+								"tunes",
+								"{{tuneUuid}}",
+								"setpointschedules"
+							],
+							"query": [
+								{
+									"key": "period",
+									"value": "M",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add a Setpoint Schedule",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{api_key}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"uuid\": \"string\",\r\n  \"autoTune\": bolean,\r\n  \"endTime\": \"2019-01-30T22:00:43Z\",\r\n  \"lowestSetpoint\": float,\r\n  \"name\": \"string\",\r\n  \"startTime\": \"2019-01-13T22:00:43Z\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://app.ngenic.se/api/v3/tunes/{{tuneUuid}}/setpointschedules",
+							"protocol": "https",
+							"host": [
+								"app",
+								"ngenic",
+								"se"
+							],
+							"path": [
+								"api",
+								"v3",
+								"tunes",
+								"{{tuneUuid}}",
+								"setpointschedules"
+							],
+							"query": [
+								{
+									"key": "period",
+									"value": "M",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get a Setpoint Schedule",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{api_key}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://app.ngenic.se/api/v3/tunes/{{tuneUuid}}/setpointschedules",
+							"protocol": "https",
+							"host": [
+								"app",
+								"ngenic",
+								"se"
+							],
+							"path": [
+								"api",
+								"v3",
+								"tunes",
+								"{{tuneUuid}}",
+								"setpointschedules"
+							],
+							"query": [
+								{
+									"key": "period",
+									"value": "M",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Modify a Setpoint Schedule",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{api_key}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"uuid\": \"string\",\r\n  \"autoTune\": bolean,\r\n  \"endTime\": \"2019-01-30T22:00:43Z\",\r\n  \"lowestSetpoint\": float,\r\n  \"name\": \"string\",\r\n  \"startTime\": \"2019-01-13T22:00:43Z\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://app.ngenic.se/api/v3/tunes/{{tuneUuid}}/setpointschedules",
+							"protocol": "https",
+							"host": [
+								"app",
+								"ngenic",
+								"se"
+							],
+							"path": [
+								"api",
+								"v3",
+								"tunes",
+								"{{tuneUuid}}",
+								"setpointschedules"
+							],
+							"query": [
+								{
+									"key": "period",
+									"value": "M",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete a Setpoint Schedule",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{api_key}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://app.ngenic.se/api/v3/tunes/{{tuneUuid}}/setpointschedules",
+							"protocol": "https",
+							"host": [
+								"app",
+								"ngenic",
+								"se"
+							],
+							"path": [
+								"api",
+								"v3",
+								"tunes",
+								"{{tuneUuid}}",
+								"setpointschedules"
+							],
+							"query": [
+								{
+									"key": "period",
+									"value": "M",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "UserAccount",
+			"item": [
+				{
+					"name": "Get a User Account",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{api_key}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://app.ngenic.se/api/v3/useraccounts/{userAccountUuid}",
+							"protocol": "https",
+							"host": [
+								"app",
+								"ngenic",
+								"se"
+							],
+							"path": [
+								"api",
+								"v3",
+								"useraccounts",
+								"{userAccountUuid}"
+							],
+							"query": [
+								{
+									"key": "period",
+									"value": "M",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Modify a User Account",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{api_key}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"uuid\": \"string\",\r\n  \"createdDate\": \"2017-01-20T14:44:25Z\",\r\n  \"hasFinishedInstallation\": bolean,\r\n  \"name\": \"string\",\r\n  \"passwordChangedDate\": \"2019-01-02T10:07:08Z\",\r\n  \"userName\": \"string\",\r\n  \"tuneUsers\": [\r\n    {\r\n      \"isPrincipal\": bolean,\r\n      \"name\": \"string\",\r\n      \"tuneUuid\": \"string\",\r\n      \"tuneName\": \"string\",\r\n      \"userAccountUuid\": \"string\",\r\n      \"userName\": \"string\"\r\n    }\r\n  ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://app.ngenic.se/api/v3/useraccounts/{userAccountUuid}",
+							"protocol": "https",
+							"host": [
+								"app",
+								"ngenic",
+								"se"
+							],
+							"path": [
+								"api",
+								"v3",
+								"useraccounts",
+								"{userAccountUuid}"
+							],
+							"query": [
+								{
+									"key": "period",
+									"value": "M",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
