@@ -75,3 +75,8 @@ Each request is pre-configured with required parameters, URL templates, and exam
 ```http
 GET https://app.ngenic.se/api/v3/tunes
 Authorization: Bearer {{api_key}}
+```
+
+### 6. API Documentation
+Documentation site: https://developer.ngenic.se/
+Generate keys: https://developer.ngenic.se/tokens
