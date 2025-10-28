@@ -35,9 +35,6 @@ Before sending requests, make sure your environment variables are properly confi
 |-----------|----------|-------------|
 | `api_key` | `your_api_token_here` | Your Ngenic API token used for authentication (Bearer Token). |
 | `tuneUuid` | `123e4567-e89b-12d3-a456-426614174000` | The UUID of the Tune you want to interact with. |
-| `nodeUuid` | `abcdef12-3456-7890-abcd-ef1234567890` | The UUID of a specific node (optional). |
-| `roomUuid` | `fedcba98-7654-3210-fedc-ba9876543210` | UUID of a room (optional). |
-| `userAccountUuid` | `user-uuid` | Identifier for a user account (optional). |
 
 > ⚠️ **Do not commit environment files containing API keys or tokens to source control.**
 
